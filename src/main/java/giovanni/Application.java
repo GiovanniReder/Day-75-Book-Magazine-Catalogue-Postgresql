@@ -27,7 +27,7 @@ public class Application {
 
 
 
-        Riviste rivista1 = new Riviste(100, 2005 , "Focus" , Periodicita.MENSILE );
+        Riviste rivista1 = new Riviste(100, 2007 , "Focus" , Periodicita.MENSILE );
         Riviste rivista2 = new Riviste(70, 2010 , "Japan Magazine" , Periodicita.SEMESTRALE );
         Riviste rivista3 = new Riviste(150, 1998 , "F" , Periodicita.SETTIMANALE );
         Riviste rivista4 = new Riviste(200, 2005 , "One Piece" , Periodicita.SETTIMANALE );
@@ -35,10 +35,12 @@ public class Application {
 
 
 
+        System.out.println(dao.ricercaPerAnno(2007));
 
 
 
 
-
+em.close();
+emf.close();
     }
 }
