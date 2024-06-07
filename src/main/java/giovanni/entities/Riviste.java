@@ -1,9 +1,7 @@
 package giovanni.entities;
 
 import giovanni.enums.Periodicita;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 
 
 @Entity

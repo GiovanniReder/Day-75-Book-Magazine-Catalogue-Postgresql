@@ -76,8 +76,26 @@ public class Application {
         LocalDate restituzioneEffettiva2 = LocalDate.of(2024, 1, 28);
         Prestiti prestito2 = new Prestiti(giovanni , rivista1 ,inizioPrestito2 ,restituzioneEffettiva2 , inizioPrestito2.plusDays(30));
 
-        prestitoDao.save(prestito1);
-        prestitoDao.save(prestito2);
+
+        LocalDate inizioPrestito3 = LocalDate.of(2024, 06, 07);
+        LocalDate restituzioneEffettiva3 = LocalDate.of(2024, 8, 28);
+        Prestiti prestito3 = new Prestiti(giacomo , book2 ,inizioPrestito3 ,restituzioneEffettiva3 , inizioPrestito3.plusDays(30));
+
+        LocalDate inizioPrestito4 = LocalDate.of(2024, 06, 07);
+        LocalDate restituzioneEffettiva4 = LocalDate.of(2024, 8, 28);
+        Prestiti prestito4 = new Prestiti(marina , book4 ,inizioPrestito4 ,restituzioneEffettiva4 , inizioPrestito4.plusDays(30));
+
+        LocalDate inizioPrestito5 = LocalDate.of(2024, 06, 07);
+        LocalDate restituzioneEffettiva5 = LocalDate.of(2024, 8, 28);
+        Prestiti prestito5 = new Prestiti(luciana , rivista4 ,inizioPrestito5 ,restituzioneEffettiva5 , inizioPrestito5.plusDays(30));
+
+         prestitoDao.save(prestito1);
+         prestitoDao.save(prestito2);
+         prestitoDao.save(prestito3);
+         prestitoDao.save(prestito4);
+         prestitoDao.save(prestito5);
+
+        System.out.println("se si vede questo messagio è ok");
 
 
 
