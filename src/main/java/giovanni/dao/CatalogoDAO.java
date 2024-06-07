@@ -13,7 +13,7 @@ public class CatalogoDAO {
         this.em = em;
     }
 
-    // METODI
+    // METODO 1 AGGIUNTA DI UN ELEMENTO DEL CATALOGO
 
     public void save(Catalogo catalogo){
         EntityTransaction transaction = em.getTransaction();
@@ -25,13 +25,29 @@ public class CatalogoDAO {
 
     }
 
+    // METODO 3 RICERCA TRAMITE ISBN
+
     public Catalogo findByISBN(long ISBN){
         Catalogo catalogo = em.find(Catalogo.class, ISBN);
         if (catalogo == null ) throw new NotFoundException(ISBN);
         return catalogo;
     }
 
+    // METODO 2 RIMOZIONE DAL DB TRAMITE ISBN
+
     public void removeByIsbn(long ISBN){
+        try {
+            EntityTransaction transaction = em.getTransaction();
+            transaction.begin();
+            Catalogo foundC = em.find(Catalogo.class, ISBN);
+            if (foundC != null){
+                em.remove(foundC);
+                transaction.commit();
+                System.out.println("Oggetto rimosso dal database");
+            } else System.out.println("Oggetto non trovato nel db");
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
     }
 }
