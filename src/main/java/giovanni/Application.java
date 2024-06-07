@@ -35,7 +35,8 @@ public class Application {
 
 
 
-        System.out.println(dao.ricercaPerAnno(2007));
+        System.out.println(dao.ricercaPerAnno(2016));
+        System.out.println(dao.ricercaPerAutore("Pino Imperatore"));
 
 
 
