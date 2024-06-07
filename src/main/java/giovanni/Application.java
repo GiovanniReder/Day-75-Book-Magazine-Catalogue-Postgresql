@@ -39,8 +39,8 @@ public class Application {
         Riviste rivista5 = new Riviste(400, 1962 , "Rolling Stones" , Periodicita.MENSILE );
 
 
-
-       // System.out.println(dao.ricercaPerAnno(2016));
+        System.out.println(dao.findByISBN(152));
+        System.out.println(dao.ricercaPerAnno(2016));
         // System.out.println(dao.ricercaPerAutore("Pino Imperatore"));
        // System.out.println(dao.ricercaPerTitolo("I Cozonac"));
 
@@ -61,33 +61,33 @@ public class Application {
         Utenti luciana = new Utenti(dataDiNascita1, "Luciana", "Litizzetto");
 
         // utenteDao.save(aldo);
-        // utenteDao.save(giovanni);
-        // utenteDao.save(giacomo);
-        // utenteDao.save(marina);
-        // utenteDao.save(luciana);
+       //  utenteDao.save(giovanni);
+      //  utenteDao.save(giacomo);
+      //  utenteDao.save(marina);
+      //   utenteDao.save(luciana);
 
 
         LocalDate inizioPrestito1 = LocalDate.of(2023, 06, 07);
         LocalDate restituzioneEffettiva1 = LocalDate.of(2023, 8, 28);
-        Prestiti prestito1 = new Prestiti(aldo , book1 ,inizioPrestito1 ,restituzioneEffettiva1 , inizioPrestito1.plusDays(30));
+        Prestiti prestito1 = new Prestiti(aldo , dao.findByISBN(152) ,inizioPrestito1 ,restituzioneEffettiva1 , inizioPrestito1.plusDays(30));
 
 
         LocalDate inizioPrestito2 = LocalDate.of(2024, 01, 07);
         LocalDate restituzioneEffettiva2 = LocalDate.of(2024, 1, 28);
-        Prestiti prestito2 = new Prestiti(giovanni , rivista1 ,inizioPrestito2 ,restituzioneEffettiva2 , inizioPrestito2.plusDays(30));
+        Prestiti prestito2 = new Prestiti(giovanni , dao.findByISBN(202) ,inizioPrestito2 ,restituzioneEffettiva2 , inizioPrestito2.plusDays(30));
 
 
         LocalDate inizioPrestito3 = LocalDate.of(2024, 06, 07);
         LocalDate restituzioneEffettiva3 = LocalDate.of(2024, 8, 28);
-        Prestiti prestito3 = new Prestiti(giacomo , book2 ,inizioPrestito3 ,restituzioneEffettiva3 , inizioPrestito3.plusDays(30));
+        Prestiti prestito3 = new Prestiti(giacomo , dao.findByISBN(203) ,inizioPrestito3 ,restituzioneEffettiva3 , inizioPrestito3.plusDays(30));
 
         LocalDate inizioPrestito4 = LocalDate.of(2024, 06, 07);
         LocalDate restituzioneEffettiva4 = LocalDate.of(2024, 8, 28);
-        Prestiti prestito4 = new Prestiti(marina , book4 ,inizioPrestito4 ,restituzioneEffettiva4 , inizioPrestito4.plusDays(30));
+        Prestiti prestito4 = new Prestiti(marina , dao.findByISBN(204) ,inizioPrestito4 ,restituzioneEffettiva4 , inizioPrestito4.plusDays(30));
 
         LocalDate inizioPrestito5 = LocalDate.of(2024, 06, 07);
         LocalDate restituzioneEffettiva5 = LocalDate.of(2024, 8, 28);
-        Prestiti prestito5 = new Prestiti(luciana , rivista4 ,inizioPrestito5 ,restituzioneEffettiva5 , inizioPrestito5.plusDays(30));
+        Prestiti prestito5 = new Prestiti(luciana , dao.findByISBN(205) ,inizioPrestito5 ,restituzioneEffettiva5 , inizioPrestito5.plusDays(30));
 
          prestitoDao.save(prestito1);
          prestitoDao.save(prestito2);
