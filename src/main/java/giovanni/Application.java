@@ -3,10 +3,7 @@ package giovanni;
 import giovanni.dao.CatalogoDAO;
 import giovanni.dao.PrestitiDAO;
 import giovanni.dao.UtentiDAO;
-import giovanni.entities.Catalogo;
-import giovanni.entities.Libri;
-import giovanni.entities.Riviste;
-import giovanni.entities.Utenti;
+import giovanni.entities.*;
 import giovanni.enums.Periodicita;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -68,6 +65,13 @@ public class Application {
         // utenteDao.save(giacomo);
         // utenteDao.save(marina);
         // utenteDao.save(luciana);
+
+
+        LocalDate inizioPrestito1 = LocalDate.of(2023, 06, 07);
+        LocalDate restituzioneEffettiva = LocalDate.of(2023, 8, 28);
+        Prestiti prestito1 = new Prestiti(aldo , book1 , inizioPrestito1 ,inizioPrestito1.plusDays(30) , restituzioneEffettiva);
+
+        prestitoDao.save(prestito1);
 
 
 
