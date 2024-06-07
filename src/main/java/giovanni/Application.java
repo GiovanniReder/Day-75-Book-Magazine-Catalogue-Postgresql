@@ -68,10 +68,16 @@ public class Application {
 
 
         LocalDate inizioPrestito1 = LocalDate.of(2023, 06, 07);
-        LocalDate restituzioneEffettiva = LocalDate.of(2023, 8, 28);
-        Prestiti prestito1 = new Prestiti(aldo , book1 , inizioPrestito1 ,inizioPrestito1.plusDays(30) , restituzioneEffettiva);
+        LocalDate restituzioneEffettiva1 = LocalDate.of(2023, 8, 28);
+        Prestiti prestito1 = new Prestiti(aldo , book1 ,inizioPrestito1 ,restituzioneEffettiva1 , inizioPrestito1.plusDays(30));
+
+
+        LocalDate inizioPrestito2 = LocalDate.of(2024, 01, 07);
+        LocalDate restituzioneEffettiva2 = LocalDate.of(2024, 1, 28);
+        Prestiti prestito2 = new Prestiti(giovanni , rivista1 ,inizioPrestito2 ,restituzioneEffettiva2 , inizioPrestito2.plusDays(30));
 
         prestitoDao.save(prestito1);
+        prestitoDao.save(prestito2);
 
 
 

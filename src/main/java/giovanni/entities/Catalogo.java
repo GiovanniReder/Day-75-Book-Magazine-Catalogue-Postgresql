@@ -28,7 +28,6 @@ public abstract class Catalogo {
         this.titolo = titolo;
     }
 
-    // Getters e setters
 
     public Integer getNumeroPagine() {
         return numeroPagine;

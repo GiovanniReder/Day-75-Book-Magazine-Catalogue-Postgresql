@@ -1,13 +1,10 @@
 package giovanni.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 
-import java.util.Date;
 
  @Entity
-// @Table(name = "libri")
-public class Libri extends Catalogo{
+ public class Libri extends Catalogo{
     public String autore;
     public String genere;
 

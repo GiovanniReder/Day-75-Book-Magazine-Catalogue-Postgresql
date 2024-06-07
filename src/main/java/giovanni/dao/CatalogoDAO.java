@@ -44,7 +44,7 @@ public class CatalogoDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return null; // oppure un oggetto Catalogo vuoto, a seconda delle tue esigenze
+        return null;
     }
 
     // METODO 3: RICERCA TRAMITE ISBN
@@ -87,7 +87,4 @@ public class CatalogoDAO {
     }
 
 
-    // METODO 7: RICERCA DEGLI ELEMENTI ATTUALMENTE IN PRESTITO DATO UN NUMERO DI TESSERA UTENTE
-
-    // METODO 8: RICERCA DI TUTTI I PRESTITI SCADUTI E NON ANCORA RESTITUITI
 }

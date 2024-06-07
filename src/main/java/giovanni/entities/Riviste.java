@@ -4,12 +4,10 @@ import giovanni.enums.Periodicita;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
 
-import java.util.Date;
 
 @Entity
-// @Table(name = "riviste")
+
 public class Riviste extends Catalogo{
 
     @Enumerated(EnumType.STRING)

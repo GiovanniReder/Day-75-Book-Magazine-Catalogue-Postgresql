@@ -6,27 +6,41 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "prestiti")
+public class Prestiti {
 
-public class Prestiti  {
     @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "catalogo_id")
     private Catalogo elementoPrestato;
 
+    @ManyToOne
+    @JoinColumn(name = "utente_id")
     private Utenti utente;
 
     private LocalDate inizioPrestito;
-
     private LocalDate restituzionePrevista;
-
     private LocalDate restituzioneEffettiva;
 
-    public Prestiti(){}
+    public Prestiti() {}
 
-    public Prestiti(Utenti utente, Catalogo elementoPrestato, LocalDate inizioPrestito,  LocalDate restituzionePrevista , LocalDate restituzioneEffettiva  ) {
+    public Prestiti(Utenti utente , Catalogo elementoPrestato , LocalDate inizioPrestito , LocalDate restituzioneEffettiva, LocalDate restituzionePrevista ) {
+        this.restituzioneEffettiva = restituzioneEffettiva;
+        this.restituzionePrevista = restituzionePrevista;
+        this.inizioPrestito = inizioPrestito;
         this.utente = utente;
         this.elementoPrestato = elementoPrestato;
-        this.inizioPrestito = inizioPrestito;
-        this.restituzionePrevista = restituzionePrevista;
-        this.restituzioneEffettiva = inizioPrestito.plusDays(30) ;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Catalogo getElementoPrestato() {
@@ -37,20 +51,12 @@ public class Prestiti  {
         this.elementoPrestato = elementoPrestato;
     }
 
-    public LocalDate getRestituzioneEffettiva() {
-        return restituzioneEffettiva;
+    public Utenti getUtente() {
+        return utente;
     }
 
-    public void setRestituzioneEffettiva(LocalDate restituzioneEffettiva) {
-        this.restituzioneEffettiva = restituzioneEffettiva;
-    }
-
-    public LocalDate getRestituzionePrevista() {
-        return restituzionePrevista;
-    }
-
-    public void setRestituzionePrevista(LocalDate restituzionePrevista) {
-        this.restituzionePrevista = restituzionePrevista;
+    public void setUtente(Utenti utente) {
+        this.utente = utente;
     }
 
     public LocalDate getInizioPrestito() {
@@ -61,22 +67,15 @@ public class Prestiti  {
         this.inizioPrestito = inizioPrestito;
     }
 
-    public Utenti getUtente() {
-        return utente;
+    public LocalDate getRestituzionePrevista() {
+        return restituzionePrevista;
     }
 
-    public void setUtente(Utenti utente) {
-        this.utente = utente;
+    public LocalDate getRestituzioneEffettiva() {
+        return restituzioneEffettiva;
     }
 
-    @Override
-    public String toString() {
-        return "Prestiti{" +
-                "elementoPrestato=" + elementoPrestato +
-                ", utente=" + utente +
-                ", inizioPrestito=" + inizioPrestito +
-                ", restituzionePrevista=" + restituzionePrevista +
-                ", restituzioneEffettiva=" + restituzioneEffettiva +
-                '}';
+    public void setRestituzioneEffettiva(LocalDate restituzioneEffettiva) {
+        this.restituzioneEffettiva = restituzioneEffettiva;
     }
 }
