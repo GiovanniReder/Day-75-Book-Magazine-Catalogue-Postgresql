@@ -1,14 +1,13 @@
 package giovanni.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Table(name = "utenti")
+
 public class Utenti {
     @Id
     @GeneratedValue
@@ -18,26 +17,26 @@ public class Utenti {
 
     private String cognome;
 
-    private Date dataDiNascita;
+    private LocalDate dataDiNascita;
 
     public Utenti (){}
 
-    public Utenti(long numeroTessera, Date dataDiNascita, String nome, String cognome) {
-        this.numeroTessera = numeroTessera;
+    public Utenti( LocalDate dataDiNascita, String nome, String cognome) {
         this.dataDiNascita = dataDiNascita;
         this.nome = nome;
         this.cognome = cognome;
     }
 
+
     public long getNumeroTessera() {
         return numeroTessera;
     }
 
-    public Date getDataDiNascita() {
+    public LocalDate getDataDiNascita() {
         return dataDiNascita;
     }
 
-    public void setDataDiNascita(Date dataDiNascita) {
+    public void setDataDiNascita(LocalDate dataDiNascita) {
         this.dataDiNascita = dataDiNascita;
     }
 

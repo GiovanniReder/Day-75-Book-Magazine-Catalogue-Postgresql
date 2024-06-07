@@ -5,7 +5,7 @@ import giovanni.exception.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.NoResultException;
-import jakarta.persistence.TypedQuery;
+
 
 import java.util.List;
 
@@ -78,11 +78,16 @@ public class CatalogoDAO {
                 .getResultList();
     }
 
-
-
-
-
     // METODO 6: RICERCA PER TITOLO O PARTE DI ESSO
+
+    public List<Catalogo> ricercaPerTitolo(String titolo) {
+        return em.createQuery("SELECT c FROM Catalogo c WHERE c.titolo = :titolo", Catalogo.class)
+                .setParameter("titolo", titolo)
+                .getResultList();
+    }
+
+
     // METODO 7: RICERCA DEGLI ELEMENTI ATTUALMENTE IN PRESTITO DATO UN NUMERO DI TESSERA UTENTE
+
     // METODO 8: RICERCA DI TUTTI I PRESTITI SCADUTI E NON ANCORA RESTITUITI
 }
